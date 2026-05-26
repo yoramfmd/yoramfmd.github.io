@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet">
+
+  <!-- Background: warm cream -->
+  <rect width="1600" height="1000" fill="#F8F6F1"/>
+
+  <!-- Navy block on top half (slightly more than half for cover-feel) -->
+  <rect x="0" y="0" width="1600" height="520" fill="#1B4F72"/>
+
+  <!-- Thin gold accent rule -->
+  <rect x="0" y="520" width="1600" height="4" fill="#C9A961"/>
+
+  <!-- TOP NAVY BLOCK: Title and author -->
+
+  <!-- Eyebrow -->
+  <text x="120" y="130" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#C9A961" letter-spacing="6" font-weight="400">A PRACTITIONER'S GUIDE TO THE NEW PM JOB</text>
+
+  <!-- Main title -->
+  <text x="120" y="260" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#FFFFFF" font-weight="600" letter-spacing="-1">Agentic AI</text>
+  <text x="120" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="92" fill="#FFFFFF" font-weight="600" letter-spacing="-1">for Busy Product Managers</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="440" font-family="Georgia, serif" font-size="30" fill="#C9A961" font-style="italic">Designing the agent and the supervisor.</text>
+
+  <!-- Short divider rule -->
+  <line x1="120" y1="475" x2="280" y2="475" stroke="#C9A961" stroke-width="2"/>
+
+  <!-- BOTTOM CREAM BLOCK: Quote and CTA -->
+
+  <!-- Top divider rule -->
+  <line x1="120" y1="600" x2="1480" y2="600" stroke="#1B4F72" stroke-width="1" opacity="0.2"/>
+
+  <!-- Pull quote -->
+  <text x="120" y="690" font-family="Georgia, serif" font-size="38" fill="#1a1a1a" font-style="italic">"You built the agent. Now design the person</text>
+  <text x="120" y="740" font-family="Georgia, serif" font-size="38" fill="#1a1a1a" font-style="italic">who is supposed to be watching it.</text>
+  <text x="120" y="790" font-family="Georgia, serif" font-size="38" fill="#1a1a1a" font-style="italic">That is half the product."</text>
+
+  <!-- Attribution -->
+  <text x="120" y="850" font-family="Georgia, serif" font-size="20" fill="#5f5e5a" letter-spacing="3" font-weight="600">CHAPTER 4. NOW DESIGN THE BEHAVIOR.</text>
+
+  <!-- Bottom divider rule -->
+  <line x1="120" y1="895" x2="1480" y2="895" stroke="#1B4F72" stroke-width="1" opacity="0.2"/>
+
+  <!-- Author bottom-left, domain bottom-right -->
+  <text x="120" y="960" font-family="Georgia, serif" font-size="32" fill="#1B4F72" font-weight="600" letter-spacing="0.5">Yoram Friedman, MD</text>
+  <text x="1480" y="960" font-family="Georgia, serif" font-size="24" fill="#1B4F72" text-anchor="end" font-weight="600" letter-spacing="0.5">agenticaiproductmanagement.com</text>
+
+</svg>
