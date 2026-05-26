@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoram Friedman, MD - Physician and Senior Product Leader</title>
+<meta name="description" content="Yoram Friedman, MD. Physician and senior product leader. Working on what it actually takes for AI to move from pilot to production in regulated environments. Author of Agentic AI for Busy Product Managers.">
+<link rel="canonical" href="https://yoramfriedman.com/" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #1B4F72;
+  --navy-light: #2E86C1;
+  --ink:    #1a1a1a;
+  --mid:    #5f5e5a;
+  --muted:  #888780;
+  --rule:   #e0e0de;
+  --bg:     #ffffff;
+  --bg-warm:#f8f8f6;
+  --blue-tint: #E6F1FB;
+  --green-tint: #E1F5EE;
+  --amber-tint: #FAEEDA;
+  --blue-accent: #185FA5;
+  --green-accent: #0F6E56;
+  --amber-accent: #854F0B;
+  --max: 860px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg-warm);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: var(--max);
+  margin: 0 auto;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 0.5px solid var(--rule);
+  padding: 0 40px;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.nav-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--navy); }
+
+/* HERO */
+.hero {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 80px 40px 64px;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 56px;
+  align-items: center;
+}
+.hero-photo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.hero-photo img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.hero-name {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.hero-name span { color: var(--navy); }
+.hero-thesis {
+  font-size: 19px;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 22px;
+  max-width: 520px;
+  font-weight: 400;
+}
+.hero-facts {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* SIGNAL QUOTE */
+.signal {
+  max-width: var(--max);
+  margin: 0 auto;
+  background: var(--navy);
+  padding: 48px 40px;
+}
+.signal-inner {
+  /* nothing additional; signal itself is now constrained */
+}
+.signal-quote {
+  font-size: 22px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.55;
+  font-style: italic;
+  margin-bottom: 14px;
+  max-width: 700px;
+}
+.signal-attr {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 40px;
+  background: var(--bg);
+}
+
+.section-inner {
+  /* sections are themselves constrained now; inner is just a passthrough */
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--mid);
+  margin-bottom: 36px;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ABOUT */
+.about-body {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.8;
+}
+.about-body p {
+  margin-bottom: 18px;
+  color: var(--mid);
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--ink); font-weight: 600; }
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 4px 12px;
+  background: #ffffff;
+  border: 0.5px solid var(--rule);
+  color: var(--mid);
+}
+
+/* LIFECYCLE */
+.lifecycle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.lc-phase {
+  border-radius: 10px;
+  background: #ffffff;
+  border: 0.5px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lc-phase.p0 { border-bottom-color: #6c757d; }
+.lc-phase.p1 { border-bottom-color: #378ADD; }
+.lc-phase.p2 { border-bottom-color: #7950f2; }
+.lc-phase.p3 { border-bottom-color: #dc2626; }
+.lc-phase.p4 { border-bottom-color: #0c8599; }
+.lc-phase.p5 { border-bottom-color: #e67700; }
+.lc-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f1f3f5;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 auto 4px;
+}
+.lc-phase.p1 .lc-num { background: #E6F1FB; color: #185FA5; }
+.lc-phase.p2 .lc-num { background: #f3f0ff; color: #6741d9; }
+.lc-phase.p3 .lc-num { background: #FCEBEB; color: #A32D2D; }
+.lc-phase.p4 .lc-num { background: #e3fafc; color: #0b7285; }
+.lc-phase.p5 .lc-num { background: #fff4e6; color: #e67700; }
+.lc-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+.lc-desc {
+  font-size: 12px;
+  color: var(--mid);
+  text-align: center;
+  line-height: 1.5;
+}
+.lc-divider {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 6px 0;
+}
+.lc-q-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.lc-q {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.45;
+}
+.lc-note {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  margin-top: 16px;
+}
+.lc-usage {
+  margin-top: 28px;
+  padding: 18px 22px;
+  background: var(--blue-tint);
+  border-left: 3px solid var(--navy);
+  border-radius: 0 8px 8px 0;
+  font-size: 14px;
+  color: var(--blue-accent);
+  line-height: 1.65;
+}
+.lc-usage strong { color: var(--blue-accent); font-weight: 600; }
+
+/* FRAMEWORKS */
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.fw-card {
+  border-radius: 8px;
+  border: 0.5px solid var(--rule);
+  border-left: 3px solid var(--navy);
+  padding: 16px 18px;
+  background: #ffffff;
+}
+.fw-num {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .08em;
+  margin-bottom: 6px;
+}
+.fw-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.fw-phrase {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* SPEAKING */
+.speaking-banners {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.speaking-banner {
+  border-left: 3px solid var(--navy);
+  padding: 18px 22px;
+  background: var(--blue-tint);
+  border-radius: 0 8px 8px 0;
+}
+.speaking-banner-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+.speaking-banner-headline {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.speaking-banner-headline.large {
+  font-size: 32px;
+  line-height: 1.1;
+}
+.speaking-banner-text {
+  font-size: 14px;
+  color: var(--blue-accent);
+  line-height: 1.55;
+}
+.speaking-body {
+  font-size: 15px;
+  color: var(--mid);
+  line-height: 1.75;
+}
+.speaking-body p { margin-bottom: 14px; }
+.speaking-body p:last-child { margin-bottom: 0; }
+.speaking-body strong { color: var(--ink); font-weight: 600; }
+
+/* WRITING & BOOK */
+.work-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.work-card {
+  border-radius: 12px;
+  border: 0.5px solid var(--rule);
+  padding: 28px;
+  background: #ffffff;
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.15s, border-color 0.15s;
+  border-bottom: 3px solid var(--rule);
+}
+.work-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+.work-card.book { border-bottom-color: var(--blue-accent); }
+.work-card.write { border-bottom-color: var(--green-accent); }
+.work-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.work-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.work-card.book .work-card-title { color: var(--blue-accent); }
+.work-card.write .work-card-title { color: var(--green-accent); }
+.work-card-desc {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.work-card-cta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: var(--muted);
+}
+
+/* BOOK COVER CARD */
+.book-cover-card {
+  display: block;
+  max-width: 680px;
+  margin: 0 auto;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: Georgia, "Times New Roman", serif;
+  text-align: left;
+}
+.book-cover-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+.bc-navy {
+  background: #1B4F72;
+  padding: 32px 38px 34px;
+  position: relative;
+}
+.bc-eyebrow {
+  font-size: 11px;
+  font-weight: 400;
+  color: #C9A961;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
+}
+.bc-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
+}
+.bc-subtitle {
+  font-size: 14px;
+  color: #C9A961;
+  font-style: italic;
+  margin: 0;
+}
+.bc-divider {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #C9A961;
+  margin-top: 14px;
+}
+.bc-cream {
+  background: #F8F6F1;
+  padding: 28px 38px 26px;
+}
+.bc-quote {
+  font-size: 16px;
+  color: #1a1a1a;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.bc-attr {
+  font-size: 10px;
+  color: #5f5e5a;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+.bc-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(27,79,114,0.15);
+  font-size: 13px;
+}
+.bc-author {
+  color: #1B4F72;
+  font-weight: 600;
+}
+.bc-domain {
+  color: #1B4F72;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+@media (max-width: 520px) {
+  .bc-navy { padding: 24px 22px 26px; }
+  .bc-cream { padding: 22px 22px 22px; }
+  .bc-title { font-size: 26px; }
+  .bc-quote { font-size: 14px; }
+  .bc-foot { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* CONTACT BUTTONS */
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.li-btn,
+.email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 7px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.li-btn {
+  background: #0A66C2;
+  color: #ffffff;
+}
+.li-btn:hover { background: #084f96; }
+.li-icon { width: 14px; height: 14px; fill: #ffffff; }
+.email-btn {
+  background: var(--navy);
+  color: #ffffff;
+}
+.email-btn:hover { background: #14405b; }
+.email-icon { width: 15px; height: 15px; stroke: #ffffff; }
+
+/* FOOTER */
+footer {
+  max-width: var(--max);
+  margin: 0 auto;
+  background: var(--ink);
+  padding: 44px 40px;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+.footer-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+}
+.footer-links {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.95); }
+
+/* DIVIDER */
+hr.rule {
+  border: none;
+  border-top: 0.5px solid var(--rule);
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .hero { padding: 56px 20px 48px; grid-template-columns: 1fr; gap: 28px; }
+  .hero-photo { order: -1; justify-content: flex-start; }
+  .hero-photo img { width: 140px; height: 140px; }
+  .hero-name { font-size: 34px; }
+  .hero-thesis { font-size: 17px; }
+  section { padding: 56px 20px; }
+  .signal { padding: 44px 20px; }
+  .signal-quote { font-size: 19px; }
+  .section-title { font-size: 24px; }
+  .lifecycle-grid { grid-template-columns: 1fr 1fr; }
+  .frameworks-grid { grid-template-columns: 1fr 1fr; }
+  .work-cards { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .nav-links { gap: 18px; }
+}
+
+@media (max-width: 460px) {
+  .lifecycle-grid { grid-template-columns: 1fr; }
+  .frameworks-grid { grid-template-columns: 1fr; }
+  .nav-links li:not(:last-child) { display: none; }
+}
+
+@media print {
+  nav, footer { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Yoram Friedman</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#lifecycle">Lifecycle</a></li>
+      <li><a href="#frameworks">Frameworks</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="https://www.linkedin.com/in/yoramf/" target="_blank" rel="noopener">LinkedIn &#8599;</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="top" class="hero">
+  <div>
+    <p class="hero-eyebrow">Physician &middot; Product Leader &middot; Author</p>
+    <h1 class="hero-name">Yoram Friedman<span>, MD</span></h1>
+    <p class="hero-thesis">Working on what it actually takes for AI to move from pilot to production in regulated environments.</p>
+    <p class="hero-facts">Trained as a physician. Fifteen years in enterprise product. Currently part of SAP's Business AI platform product management team.</p>
+  </div>
+  <div class="hero-photo">
+    <img src="sketch-photo.png" alt="Yoram Friedman">
+  </div>
+</div>
+
+<!-- SIGNAL QUOTE -->
+<div class="signal">
+  <div class="signal-inner">
+    <p class="signal-quote">"You built the agent. Now design the person who is supposed to be watching it. That is half the product, and most teams never open the specification for it."</p>
+    <p class="signal-attr">From Agentic AI for Busy Product Managers</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">The combination is rarer than it sounds</h2>
+    <p class="section-sub">There are product leaders who understand healthcare data. There are physicians who understand AI. The intersection is small, and most of the work that matters lives there.</p>
+
+    <div class="about-body">
+      <p>With 15+ years building enterprise cloud and data platforms, I bring the product track record of a senior technology leader and the clinical depth of a trained physician. Among product managers, I understand what it actually means when an algorithm touches a patient. Among physicians, I have built and shipped products at <strong>Walmart</strong> scale, <strong>SAP</strong> enterprise, and regulated health tech startups. That intersection is where I do my best work.</p>
+      <p>Senior Director at <strong>Walmart Global Tech</strong> ($400M+ in operational savings; 10-person global PM team built and grown from the ground up). At <strong>Hello Heart</strong>, defined the regulated clinical health tech foundation for remote cardiac monitoring under HIPAA. Currently on <strong>SAP's Business AI platform</strong> product management team, partnering with multiple SAP business units, including Healthcare, on their data products and AI adoption.</p>
+      <p>The hardest part of technology transformation is not the architecture, it is the people. I focus on the human and cultural side of change: how teams adopt new tools, where resistance comes from, and how to design rollouts that respect workflow reality and build genuine trust. <strong>Technology that is not adopted is not a product. It is a cost.</strong></p>
+      <p>I write and think publicly about the hard problems in healthcare AI and agentic product design. The technical foundation goes back to early work on healthcare data integration and enterprise interoperability standards (<strong>HL7, FHIR, EDIFACT, IDOC</strong>), and how data actually flows across regulated boundaries. Recent: three <strong>Harvard Medical School / Emeritus</strong> certifications, completed in deliberate sequence to deepen domain expertise at the AI / healthcare intersection. <em>AI in Health Care: From Strategies to Implementation</em> (Oct 2025), <em>Leading Digital Transformation in Health Care</em> (Dec 2025), and <em>Health Care Transformation</em> (Jan 2026).</p>
+    </div>
+    <div class="about-tags">
+      <span class="tag">Agentic AI</span>
+      <span class="tag">Healthcare AI</span>
+      <span class="tag">Enterprise Data Architecture</span>
+      <span class="tag">FHIR / OMOP / SNOMED CT</span>
+      <span class="tag">AI Governance</span>
+      <span class="tag">Regulated Environments</span>
+      <span class="tag">Change Management</span>
+      <span class="tag">Technology Adoption</span>
+      <span class="tag">Product Strategy</span>
+      <span class="tag">Clinical Informatics</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-inner">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">The books and the writing</h2>
+    <p class="section-sub">Two books and a continuous body of writing. One practitioner's guide for PMs building agentic AI. One on what medicine is risking by letting AI into the room without really watching. And a weekly record of thinking on healthcare AI, enterprise data, and the governance questions the market is not asking clearly enough.</p>
+
+    <div class="work-cards">
+
+      <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" class="work-card book">
+        <p class="work-card-label">Book</p>
+        <p class="work-card-title">Agentic AI for Busy Product Managers</p>
+        <p class="work-card-desc">A practitioner's guide to the new PM job. Eleven chapters and two appendices on evals, runtime artifacts, supervision design, cost models, observability, and governance that actually holds. Free to read online.</p>
+        <p class="work-card-cta">Read at agenticaiproductmanagement.com &#8599;</p>
+      </a>
+
+      <a href="https://a.co/d/04wosVBM" target="_blank" rel="noopener" class="work-card book">
+        <p class="work-card-label">Book</p>
+        <p class="work-card-title">The Second One in the Room</p>
+        <p class="work-card-desc">Medicine let AI into the room and looked away. What happens when clinical decision-making shares space with a system no one fully understands — and no one is watching closely enough.</p>
+        <p class="work-card-cta">Available on Amazon &#8599;</p>
+      </a>
+
+      <a href="https://data-decisions-and-clinics.com" target="_blank" rel="noopener" class="work-card write">
+        <p class="work-card-label">Articles</p>
+        <p class="work-card-title">Data, Decisions, and Clinics</p>
+        <p class="work-card-desc">Ninety-plus articles on healthcare AI, enterprise data architecture, regulation, and what it actually takes for AI to move from pilot to production in a regulated environment. New writing weekly.</p>
+        <p class="work-card-cta">Read at data-decisions-and-clinics.com &#8599;</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIFECYCLE -->
+<section id="lifecycle">
+  <div class="section-inner">
+    <p class="section-label">The Framework</p>
+    <h2 class="section-title">The Agentic AI PM Lifecycle</h2>
+    <p class="section-sub">Six phases that name what a product manager actually does when shipping an agentic AI product. The structural backbone of the book, the article series, and the SAP Community AI Product Management posts. Most teams enter Phase 1 without Phase 0; that is where the failures begin.</p>
+
+    <div class="lifecycle-grid">
+
+      <div class="lc-phase p0">
+        <div class="lc-num">0</div>
+        <p class="lc-name">AI Literacy</p>
+        <p class="lc-desc">A state of the organization, not a project stage.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">Does this PM understand what an agent is and is not?</p>
+      </div>
+
+      <div class="lc-phase p1">
+        <div class="lc-num">1</div>
+        <p class="lc-name">Discover &amp; Decide</p>
+        <p class="lc-desc">Decide whether an agent is the right solution. Most failures prevented here.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">Should we actually build this?</p>
+      </div>
+
+      <div class="lc-phase p2">
+        <div class="lc-num">2</div>
+        <p class="lc-name">Design</p>
+        <p class="lc-desc">Design the agent and the supervisory system. Runtime behavior engineered deliberately.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">What can the agent do unilaterally?</p>
+      </div>
+
+      <div class="lc-phase p3">
+        <div class="lc-num">3</div>
+        <p class="lc-name">Evaluate</p>
+        <p class="lc-desc">Prove readiness through evidence. Replaces the pass/fail gate with distribution.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">What is the P10 pass rate across K runs?</p>
+      </div>
+
+      <div class="lc-phase p4">
+        <div class="lc-num">4</div>
+        <p class="lc-name">Observe</p>
+        <p class="lc-desc">Measure what the agent actually does. Continuous front end of Operate.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">Did the agent stay within its boundary?</p>
+      </div>
+
+      <div class="lc-phase p5">
+        <div class="lc-num">5</div>
+        <p class="lc-name">Operate &amp; Retire</p>
+        <p class="lc-desc">Act on what Observe shows. Drift detection, governance, retirement criteria.</p>
+        <hr class="lc-divider">
+        <p class="lc-q-label">Key question</p>
+        <p class="lc-q">Is the agent still doing what we authorized?</p>
+      </div>
+
+    </div>
+
+    <p class="lc-note">Phases 4 and 5 form a continuous feedback loop. Observe is the measurement layer; Operate is the response layer.</p>
+
+    <div class="lc-usage">
+      <strong>Used as the structural basis for</strong> the book <em>Agentic AI for Busy Product Managers</em>, the article series at <em>data-decisions-and-clinics.com</em>, and the SAP Community AI Product Management posts. Adaptable as a multi-session product manager upskilling program for organizations building agentic systems in regulated environments.
+    </div>
+
+  </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section id="frameworks">
+  <div class="section-inner">
+    <p class="section-label">Frameworks</p>
+    <h2 class="section-title">The vocabulary that fills the cells</h2>
+    <p class="section-sub">35 named mental models developed across the writing, each with an insight, a key phrase, and a source. The vocabulary that makes the lifecycle above operational. Nine shown below.</p>
+
+    <div class="frameworks-grid">
+
+      <div class="fw-card">
+        <p class="fw-num">01</p>
+        <p class="fw-name">The Iceberg</p>
+        <p class="fw-phrase">"You moved the data. The meaning stayed behind."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">02</p>
+        <p class="fw-name">The Coverage Gradient</p>
+        <p class="fw-phrase">"Regulatory intensity tracks clinical claims, not patient risk."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">03</p>
+        <p class="fw-name">Criterion 4 Failure Mode</p>
+        <p class="fw-phrase">"The framework assumes someone is watching."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">04</p>
+        <p class="fw-name">Trained on the Wrong End of the Story</p>
+        <p class="fw-phrase">"The model learned the end. It is deployed at the beginning."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">05</p>
+        <p class="fw-name">Intelligence Without Context</p>
+        <p class="fw-phrase">"Intelligence without context is just confidence."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">06</p>
+        <p class="fw-name">Agent-Based Experience (ABX)</p>
+        <p class="fw-phrase">"Design for one customer and forget the other. It fails."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">07</p>
+        <p class="fw-name">Two-Channel Agentic Design</p>
+        <p class="fw-phrase">"Most PMs design Channel 1. Channel 2 is the supervisor."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">08</p>
+        <p class="fw-name">The Supervision Paradox</p>
+        <p class="fw-phrase">"Oversight without understanding isn't safety. It's sign-off."</p>
+      </div>
+
+      <div class="fw-card">
+        <p class="fw-num">09</p>
+        <p class="fw-name">Earned vs. Scheduled Autonomy</p>
+        <p class="fw-phrase">"Earned, not scheduled. Expand the boundary on evidence, not the calendar."</p>
+      </div>
+
+    </div>
+
+    <p style="font-size:13px; color:var(--muted); margin-top:4px;">Nine of 35 shown. The rest live in the book and articles. <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:none; font-weight:600;">Browse the full library &rarr;</a></p>
+
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section id="speaking">
+  <div class="section-inner">
+    <p class="section-label">Speaking &amp; Impact</p>
+    <h2 class="section-title">Two books. One argument.</h2>
+    <p class="section-sub">Most people write about AI. These two books come from someone who trained in the clinical rooms AI is now entering, and then spent fifteen years building the enterprise platforms displacing them.</p>
+
+    <div class="speaking-banners">
+
+      <div class="speaking-banner">
+        <p class="speaking-banner-label">Book 1 &mdash; For Product Managers</p>
+        <p class="speaking-banner-headline">Agentic AI for Busy Product Managers</p>
+        <p class="speaking-banner-text">AI did not just change what product managers can build. It changed what they are responsible for. A practical field manual on autonomy boundaries, supervision design, eval strategy, and the governance most teams forget to build. Written for PMs shipping in environments where being wrong has consequences.</p>
+      </div>
+
+      <div class="speaking-banner">
+        <p class="speaking-banner-label">Book 2 &mdash; For Anyone Who Is a Patient</p>
+        <p class="speaking-banner-headline">The Second One in the Room</p>
+        <p class="speaking-banner-text">Medicine's professional wall was doing two jobs: controlling who got in, and quietly governing the care that happened inside. AI has dissolved the wall. Almost no one has noticed the second job went with it. A field report from that dissolution, and a clear-eyed account of the governance architecture medicine will have to build.</p>
+      </div>
+
+      <div class="speaking-banner">
+        <p class="speaking-banner-label">Stages</p>
+        <p class="speaking-banner-headline">SAP SAPPHIRE &middot; SAP TechEd &middot; Microsoft TechEd &middot; OpenSAP</p>
+        <p class="speaking-banner-text">Speaker and trainer at major industry events on enterprise data, AI architecture, and product strategy. 40,000+ enterprise practitioners reached through a co-created OpenSAP course. 10-person global PM organization built and grown at Walmart from the ground up.</p>
+      </div>
+
+    </div>
+
+    <div class="speaking-body">
+      <p>Available for selected speaking engagements, podcasts, and advisory discussions on <strong>agentic AI product design</strong>, <strong>AI governance in regulated environments</strong>, and <strong>what medicine is risking by not watching closely enough</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK COVERS -->
+<section id="book-cover-section" style="padding-top:32px; padding-bottom:32px;">
+  <div class="section-inner">
+    <div style="display:flex; flex-wrap:wrap; gap:48px; justify-content:center; align-items:flex-start;">
+
+      <div style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <a href="https://www.amazon.com/dp/B0H22GGG9K" target="_blank" rel="noopener" aria-label="Agentic AI for Busy Product Managers on Amazon">
+          <img src="BookCover-Kindle.jpg" alt="Agentic AI for Busy Product Managers, book cover" style="height:420px; width:auto; display:block; box-shadow: 0 8px 28px rgba(0,0,0,0.18); border-radius:2px;">
+        </a>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Published May 2026. Paperback on Amazon.<br>Free online edition also at <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:none; font-weight:600;">agenticaiproductmanagement.com</a>.</p>
+      </div>
+
+      <div style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <a href="https://a.co/d/04wosVBM" target="_blank" rel="noopener" aria-label="The Second One in the Room on Amazon">
+          <img src="Kindle_Cover.jpg" alt="The Second One in the Room, book cover" style="height:420px; width:auto; display:block; box-shadow: 0 8px 28px rgba(0,0,0,0.18); border-radius:2px;">
+        </a>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Published May 2026. Available on Amazon.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="section-inner">
+    <p class="section-label">Get in touch</p>
+    <h2 class="section-title">Reach out</h2>
+    <p class="section-sub">For speaking, advisory, workshops, podcast invitations, or to share a hard problem in healthcare AI or enterprise product. I respond.</p>
+    <div class="contact-buttons">
+      <a href="https://www.linkedin.com/in/yoramf/" target="_blank" rel="noopener" class="li-btn">
+        <svg class="li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Connect on LinkedIn
+      </a>
+      <a href="mailto:contact@aiproductexpert.com?subject=From%20yoramfriedman.com" class="email-btn">
+        <svg class="email-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        Email me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-name">Yoram Friedman, MD</p>
+      <p class="footer-sub">Physician and senior product leader. AI product frameworks and practice.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener">Book</a>
+      <a href="https://data-decisions-and-clinics.com" target="_blank" rel="noopener">Articles</a>
+      <a href="https://www.linkedin.com/in/yoramf/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
