@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yoram Friedman, MD - Physician and Senior Product Leader</title>
-<meta name="description" content="Yoram Friedman, MD. Physician and senior product leader. Working on what it actually takes for AI to move from pilot to production in regulated environments. Author of Agentic AI for Busy Product Managers.">
+<meta name="description" content="Yoram Friedman, MD. Physician and senior product leader. Working on what it actually takes for AI to move from pilot to production in regulated environments. Author of Why Agentic AI Products Fail and Agentic AI for Busy Product Managers.">
 <link rel="canonical" href="https://yoramfriedman.com/" />
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -399,8 +399,14 @@ section {
 /* WRITING & BOOK */
 .work-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+.work-cards-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
 }
 .work-card {
   border-radius: 12px;
@@ -416,6 +422,7 @@ section {
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
 .work-card.book { border-bottom-color: var(--blue-accent); }
+.work-card.book2 { border-bottom-color: #7950f2; }
 .work-card.write { border-bottom-color: var(--green-accent); }
 .work-card-label {
   font-size: 10px;
@@ -434,6 +441,7 @@ section {
   letter-spacing: -0.01em;
 }
 .work-card.book .work-card-title { color: var(--blue-accent); }
+.work-card.book2 .work-card-title { color: #6741d9; }
 .work-card.write .work-card-title { color: var(--green-accent); }
 .work-card-desc {
   font-size: 13px;
@@ -632,6 +640,7 @@ hr.rule {
   .lifecycle-grid { grid-template-columns: 1fr 1fr; }
   .frameworks-grid { grid-template-columns: 1fr 1fr; }
   .work-cards { grid-template-columns: 1fr; }
+  .work-cards-top { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
   .nav-links { gap: 18px; }
 }
@@ -680,8 +689,8 @@ hr.rule {
 <!-- SIGNAL QUOTE -->
 <div class="signal">
   <div class="signal-inner">
-    <p class="signal-quote">"You built the agent. Now design the person who is supposed to be watching it. That is half the product, and most teams never open the specification for it."</p>
-    <p class="signal-attr">From Agentic AI for Busy Product Managers</p>
+    <p class="signal-quote">&ldquo;The team ships the agent. The products fail because no one ships the system that supervises it.&rdquo;</p>
+    <p class="signal-attr">From Why Agentic AI Products Fail</p>
   </div>
 </div>
 
@@ -718,9 +727,16 @@ hr.rule {
   <div class="section-inner">
     <p class="section-label">Work</p>
     <h2 class="section-title">The books and the writing</h2>
-    <p class="section-sub">Two books and a continuous body of writing. One practitioner's guide for PMs building agentic AI. One on what medicine is risking by letting AI into the room without really watching. And a weekly record of thinking on healthcare AI, enterprise data, and the governance questions the market is not asking clearly enough.</p>
+    <p class="section-sub">Three books and a continuous body of writing. Two practitioner guides for PMs and leaders building agentic AI. One on what medicine is risking by letting AI into the room without really watching. And a weekly record of thinking on healthcare AI, enterprise data, and the governance questions the market is not asking clearly enough.</p>
 
-    <div class="work-cards">
+    <div class="work-cards-top">
+
+      <a href="https://a.co/d/0gyxJWmW" target="_blank" rel="noopener" class="work-card book2">
+        <p class="work-card-label">Book &mdash; New</p>
+        <p class="work-card-title">Why Agentic AI Products Fail</p>
+        <p class="work-card-desc">A Product Manager's Guide to Designing the Supervisory Layer. Every agentic product is two products: the agent that acts, and the supervisory layer that governs it. Most teams build the first and assume the second. This book is about the second.</p>
+        <p class="work-card-cta">Available on Amazon &#8599;</p>
+      </a>
 
       <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" class="work-card book">
         <p class="work-card-label">Book</p>
@@ -728,6 +744,10 @@ hr.rule {
         <p class="work-card-desc">A practitioner's guide to the new PM job. Eleven chapters and two appendices on evals, runtime artifacts, supervision design, cost models, observability, and governance that actually holds. Free to read online.</p>
         <p class="work-card-cta">Read at agenticaiproductmanagement.com &#8599;</p>
       </a>
+
+    </div>
+
+    <div class="work-cards">
 
       <a href="https://a.co/d/04wosVBM" target="_blank" rel="noopener" class="work-card book">
         <p class="work-card-label">Book</p>
@@ -833,55 +853,55 @@ hr.rule {
       <div class="fw-card">
         <p class="fw-num">01</p>
         <p class="fw-name">The Iceberg</p>
-        <p class="fw-phrase">"You moved the data. The meaning stayed behind."</p>
+        <p class="fw-phrase">&ldquo;You moved the data. The meaning stayed behind.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">02</p>
         <p class="fw-name">The Coverage Gradient</p>
-        <p class="fw-phrase">"Regulatory intensity tracks clinical claims, not patient risk."</p>
+        <p class="fw-phrase">&ldquo;Regulatory intensity tracks clinical claims, not patient risk.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">03</p>
         <p class="fw-name">Criterion 4 Failure Mode</p>
-        <p class="fw-phrase">"The framework assumes someone is watching."</p>
+        <p class="fw-phrase">&ldquo;The framework assumes someone is watching.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">04</p>
         <p class="fw-name">Trained on the Wrong End of the Story</p>
-        <p class="fw-phrase">"The model learned the end. It is deployed at the beginning."</p>
+        <p class="fw-phrase">&ldquo;The model learned the end. It is deployed at the beginning.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">05</p>
         <p class="fw-name">Intelligence Without Context</p>
-        <p class="fw-phrase">"Intelligence without context is just confidence."</p>
+        <p class="fw-phrase">&ldquo;Intelligence without context is just confidence.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">06</p>
         <p class="fw-name">Agent-Based Experience (ABX)</p>
-        <p class="fw-phrase">"Design for one customer and forget the other. It fails."</p>
+        <p class="fw-phrase">&ldquo;Design for one customer and forget the other. It fails.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">07</p>
         <p class="fw-name">Two-Channel Agentic Design</p>
-        <p class="fw-phrase">"Most PMs design Channel 1. Channel 2 is the supervisor."</p>
+        <p class="fw-phrase">&ldquo;Most PMs design Channel 1. Channel 2 is the supervisor.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">08</p>
         <p class="fw-name">The Supervision Paradox</p>
-        <p class="fw-phrase">"Oversight without understanding isn't safety. It's sign-off."</p>
+        <p class="fw-phrase">&ldquo;Oversight without understanding isn&rsquo;t safety. It&rsquo;s sign-off.&rdquo;</p>
       </div>
 
       <div class="fw-card">
         <p class="fw-num">09</p>
         <p class="fw-name">Earned vs. Scheduled Autonomy</p>
-        <p class="fw-phrase">"Earned, not scheduled. Expand the boundary on evidence, not the calendar."</p>
+        <p class="fw-phrase">&ldquo;Earned, not scheduled. Expand the boundary on evidence, not the calendar.&rdquo;</p>
       </div>
 
     </div>
@@ -895,19 +915,25 @@ hr.rule {
 <section id="speaking">
   <div class="section-inner">
     <p class="section-label">Speaking &amp; Impact</p>
-    <h2 class="section-title">Two books. One argument.</h2>
-    <p class="section-sub">Most people write about AI. These two books come from someone who trained in the clinical rooms AI is now entering, and then spent fifteen years building the enterprise platforms displacing them.</p>
+    <h2 class="section-title">Three books. One argument.</h2>
+    <p class="section-sub">Most people write about AI. These books come from someone who trained in the clinical rooms AI is now entering, and then spent fifteen years building the enterprise platforms displacing them.</p>
 
     <div class="speaking-banners">
 
       <div class="speaking-banner">
-        <p class="speaking-banner-label">Book 1 &mdash; For Product Managers</p>
+        <p class="speaking-banner-label">New Book &mdash; For Product Managers &amp; Leaders</p>
+        <p class="speaking-banner-headline">Why Agentic AI Products Fail</p>
+        <p class="speaking-banner-text">An agentic product is two products. There is the agent, which acts, and the supervisory layer, which decides what it is allowed to do, when it must stop and ask, and what happens when it is wrong. Most teams build the first and assume the second. Written for PMs shipping AI where being wrong has consequences — in healthcare, finance, and operations where a wrong autonomous action is not a bug ticket but a consequence someone absorbs.</p>
+      </div>
+
+      <div class="speaking-banner">
+        <p class="speaking-banner-label">Book &mdash; For Product Managers</p>
         <p class="speaking-banner-headline">Agentic AI for Busy Product Managers</p>
         <p class="speaking-banner-text">AI did not just change what product managers can build. It changed what they are responsible for. A practical field manual on autonomy boundaries, supervision design, eval strategy, and the governance most teams forget to build. Written for PMs shipping in environments where being wrong has consequences.</p>
       </div>
 
       <div class="speaking-banner">
-        <p class="speaking-banner-label">Book 2 &mdash; For Anyone Who Is a Patient</p>
+        <p class="speaking-banner-label">Book &mdash; For Anyone Who Is a Patient</p>
         <p class="speaking-banner-headline">The Second One in the Room</p>
         <p class="speaking-banner-text">Medicine's professional wall was doing two jobs: controlling who got in, and quietly governing the care that happened inside. AI has dissolved the wall. Almost no one has noticed the second job went with it. A field report from that dissolution, and a clear-eyed account of the governance architecture medicine will have to build.</p>
       </div>
@@ -932,17 +958,24 @@ hr.rule {
     <div style="display:flex; flex-wrap:wrap; gap:48px; justify-content:center; align-items:flex-start;">
 
       <div style="text-align:center; display:flex; flex-direction:column; align-items:center;">
+        <a href="https://a.co/d/0gyxJWmW" target="_blank" rel="noopener" aria-label="Why Agentic AI Products Fail on Amazon">
+          <img src="BookCover-Kindle.jpg" alt="Why Agentic AI Products Fail, book cover" style="height:420px; width:auto; display:block; box-shadow: 0 8px 28px rgba(0,0,0,0.18); border-radius:2px;">
+        </a>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Why Agentic AI Products Fail.<br>Available on <a href="https://a.co/d/0gyxJWmW" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:none; font-weight:600;">Amazon</a>.</p>
+      </div>
+
+      <div style="text-align:center; display:flex; flex-direction:column; align-items:center;">
         <a href="https://www.amazon.com/dp/B0H22GGG9K" target="_blank" rel="noopener" aria-label="Agentic AI for Busy Product Managers on Amazon">
           <img src="BookCover-Kindle.jpg" alt="Agentic AI for Busy Product Managers, book cover" style="height:420px; width:auto; display:block; box-shadow: 0 8px 28px rgba(0,0,0,0.18); border-radius:2px;">
         </a>
-        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Published May 2026. Paperback on Amazon.<br>Free online edition also at <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:none; font-weight:600;">agenticaiproductmanagement.com</a>.</p>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Agentic AI for Busy Product Managers.<br>Paperback on Amazon.<br>Free online edition at <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:none; font-weight:600;">agenticaiproductmanagement.com</a>.</p>
       </div>
 
       <div style="text-align:center; display:flex; flex-direction:column; align-items:center;">
         <a href="https://a.co/d/04wosVBM" target="_blank" rel="noopener" aria-label="The Second One in the Room on Amazon">
           <img src="Kindle_Cover.jpg" alt="The Second One in the Room, book cover" style="height:420px; width:auto; display:block; box-shadow: 0 8px 28px rgba(0,0,0,0.18); border-radius:2px;">
         </a>
-        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">Published May 2026. Available on Amazon.</p>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px; letter-spacing:.04em; font-style:italic; max-width:280px;">The Second One in the Room.<br>Available on Amazon.</p>
       </div>
 
     </div>
@@ -976,6 +1009,7 @@ hr.rule {
       <p class="footer-sub">Physician and senior product leader. AI product frameworks and practice.</p>
     </div>
     <div class="footer-links">
+      <a href="https://a.co/d/0gyxJWmW" target="_blank" rel="noopener">New Book</a>
       <a href="https://agenticaiproductmanagement.com" target="_blank" rel="noopener">Book</a>
       <a href="https://data-decisions-and-clinics.com" target="_blank" rel="noopener">Articles</a>
       <a href="https://www.linkedin.com/in/yoramf/" target="_blank" rel="noopener">LinkedIn</a>
