@@ -53,7 +53,7 @@
       <div style="flex:1 1 360px; min-width:300px;">
         <p data-reveal style="font-family:var(--font-mono); font-size:12px; font-weight:500; color:var(--accent); letter-spacing:.16em; text-transform:uppercase; margin:0 0 22px;">Physician · Product Leader · Author</p>
         <h1 data-reveal style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:clamp(40px,6.4vw,70px); line-height:1.02; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 24px;">Yoram Friedman<span style="color:var(--accent);">, MD</span></h1>
-        <p data-reveal style="font-size:clamp(19px,2.4vw,24px); line-height:1.4; color:var(--ink); margin:0 0 28px; max-width:30ch; font-weight:500;">What it takes for AI to successfully move from pilot to production, in rooms where being wrong has consequences.</p>
+        <p data-reveal style="font-size:clamp(19px,2.4vw,24px); line-height:1.4; color:var(--ink); margin:0 0 28px; max-width:30ch; font-weight:500;">What it actually takes for AI to move from pilot to production, in rooms where being wrong has consequences.</p>
         <div data-reveal style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:34px;">
           <sc-for list="{{ credentials }}" as="c" hint-placeholder-count="4">
             <span style="font-family:var(--font-mono); font-size:11.5px; letter-spacing:.02em; color:var(--mid); background:var(--surface); border:1px solid var(--rule); border-radius:999px; padding:7px 13px;">{{ c }}</span>
@@ -144,6 +144,12 @@
         </sc-for>
       </div>
 
+      <p data-reveal style="font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin:0 0 22px; line-height:1.7;">Free to read online. Print and Kindle editions on Amazon:
+        <a href="https://a.co/d/0dCz9Lbx" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Book 1</a> &middot;
+        <a href="https://a.co/d/0cdvAyjn" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Book 2</a> &middot;
+        <a href="https://a.co/d/0jhGrB91" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Book 3</a>
+      </p>
+
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%,300px),1fr)); gap:14px;">
         <a href="https://a.co/d/04wosVBM" target="_blank" rel="noopener" data-reveal style="display:flex; gap:18px; background:var(--bg); border:1px solid var(--rule); border-radius:var(--card-radius); padding:22px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(33,28,24,.1);">
           <img src="Kindle_Cover.jpg" alt="The Second One in the Room" style="width:80px; aspect-ratio:5/8; object-fit:cover; border-radius:4px; box-shadow:0 8px 20px rgba(33,28,24,.22); flex:0 0 auto;">
@@ -173,6 +179,15 @@
           <p style="font-size:13px; color:var(--mid); line-height:1.55; margin:0;">Seven skills covering the agentic PM lifecycle, distilled from the series. Invoke them at the moment of need.</p>
         </div>
         <span style="font-family:var(--font-mono); font-size:11.5px; font-weight:500; color:var(--accent); white-space:nowrap;">Install &amp; learn more &nearr;</span>
+      </a>
+      <a href="https://agenticaiproductmanagement.com/interview/" target="_blank" rel="noopener" data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; margin-top:14px; background:var(--bg); border:1px solid var(--rule); border-radius:var(--card-radius); padding:20px 24px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(33,28,24,.1);">
+        <span style="width:4px; align-self:stretch; min-height:42px; border-radius:2px; background:linear-gradient(180deg,#2E78C9,#7C3AED,#1D9E75,#C2410C);"></span>
+        <div style="flex:1 1 280px;">
+          <p style="font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 0 6px;">Companion · Interview reference</p>
+          <p style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:18px; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 4px;">AI PM Interview Questions, Answered</p>
+          <p style="font-size:13px; color:var(--mid); line-height:1.55; margin:0;">Fifty-five questions answered from the product seat: the forty-four circulating, and the eleven nobody asks. Each linked to the chapter it comes from.</p>
+        </div>
+        <span style="font-family:var(--font-mono); font-size:11.5px; font-weight:500; color:var(--accent); white-space:nowrap;">Read the answers &nearr;</span>
       </a>
     </div>
   </section>
@@ -476,7 +491,7 @@ class Component extends DCLogic {
     const tags = ['Agentic AI Product Strategy','Data Products & Semantic Architecture','AI Governance','Enterprise AI Adoption','Human-Centered Change','Regulated Environments','Healthcare AI'];
 
     const seriesBooks = [
-      { n:'Book 1 · The PM', title:'Agentic AI for Busy Product Managers', sub:'Designing the Agent and the Supervisor', desc:'The full PM lifecycle for agentic products: deciding whether to build, designing behavior and evals, measuring drift, and managing the human system around the agent.', chapters:'13 chapters', status:'Published', color:'#2E78C9', link:'https://agenticaiproductmanagement.com/book3/' },
+      { n:'Book 1 · The PM', title:'Agentic AI for Busy Product Managers', sub:'A Practitioner\u2019s Guide to the New PM Job', desc:'The full PM lifecycle for agentic products: deciding whether to build, designing behavior and evals, measuring drift, and managing the human system around the agent.', chapters:'15 chapters', status:'Second edition \u00b7 Aug 1', color:'#2E78C9', link:'https://agenticaiproductmanagement.com/book3/' },
       { n:'Book 2 · The Failures', title:'Why Agentic AI Products Fail', sub:'Building the Supervisory Layer That Governs It', desc:'Every agentic product is two products. Most teams build the first and assume the second takes care of itself. It does not.', chapters:'22 chapters', status:'Published', color:'#7C3AED', link:'https://agenticaiproductmanagement.com/book4/' },
       { n:'Book 3 · The Team', title:'The Agentic AI Team', sub:'How Agentic AI Reshapes the Roles That Build It', desc:'The unit of failure is the seam between roles, not the capability of any one of them. A zoom-out from the PM seat to the whole team.', chapters:'26 chapters', status:'Published', color:'#1D9E75', link:'https://agenticaiproductmanagement.com/book5/' },
       { n:'Book 4 · The Practitioner', title:'The Agentic AI Practitioner', sub:'Keeping the Judgment the Machine Cannot Hold', desc:'A deliberate-practice curriculum for the assumption nobody audited: that the practitioner still has the judgment the structure routes through them.', chapters:'15 chapters', status:'In draft', color:'#C2410C', link:'https://agenticaiproductmanagement.com/book6/' }
