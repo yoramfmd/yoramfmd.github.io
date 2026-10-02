@@ -52,8 +52,11 @@
   body { background: var(--bg, #FBF6EE); }
   ::selection { background: var(--accent-soft, #F3E2D6); }
   @keyframes ydropfloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+  [data-bookrow] { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:36px 24px; justify-items:center; }
+  [data-bookrow] .shelf-cover { width:min(100%,228px); }
+  @media (min-width:561px) and (max-width:900px) { [data-bookrow] { grid-template-columns:repeat(2,minmax(0,1fr)); } }
   @media (max-width: 560px) {
-    [data-bookrow] { flex-direction: column; align-items: center; }
+    [data-bookrow] { grid-template-columns:1fr !important; }
   }
 </style>
 <style>
@@ -154,8 +157,8 @@ html{scroll-behavior:smooth;scroll-padding-top:110px} a:focus-visible,summary:fo
     <div style="max-width:var(--max); margin:0 auto; padding:clamp(56px,8vw,104px) clamp(20px,5vw,44px);">
       <div data-reveal style="margin-bottom:clamp(36px,5vw,56px);">
         <p style="font-family:var(--font-mono); font-size:11px; font-weight:500; color:var(--accent); letter-spacing:.16em; text-transform:uppercase; margin:0 0 14px;">Work</p>
-        <h2 style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:clamp(28px,4.2vw,46px); line-height:1.08; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 16px;">Four books, a standalone, and a weekly column</h2>
-        <p style="font-size:clamp(16px,1.7vw,18px); color:var(--mid); line-height:1.6; max-width:66ch; margin:0;">A four-book series on building agentic AI products, and keeping the human judgment they route through. A standalone book on what medicine is risking by letting AI into the room. And 100+ articles, with new writing weekly.</p>
+        <h2 style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:clamp(28px,4.2vw,46px); line-height:1.08; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 16px;">Five series books, two standalones, and a weekly column</h2>
+        <p style="font-size:clamp(16px,1.7vw,18px); color:var(--mid); line-height:1.6; max-width:66ch; margin:0;">A five-book series on building agentic AI products, and keeping the human judgment they route through. Two standalone books: one on what medicine is risking by letting AI into the room, and a plain guide to writing your first book with AI. And 100+ articles, with new writing weekly.</p>
       </div>
 
       <div data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px; margin-bottom:18px;">
@@ -173,13 +176,28 @@ html{scroll-behavior:smooth;scroll-padding-top:110px} a:focus-visible,summary:fo
             <p style="font-size:12.5px; font-style:italic; color:var(--mid); line-height:1.4; margin:0 0 12px;">{{ b.sub }}</p>
             <p style="font-size:13px; color:var(--mid); line-height:1.58; margin:0 0 16px; flex:1;">{{ b.desc }}</p>
             <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:auto;">
-              <span style="font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:.04em; text-transform:uppercase; color:var(--accent-ink); background:var(--accent-soft); border-radius:999px; padding:3px 9px;">{{ b.status }}</span>
+
               <span style="font-family:var(--font-mono); font-size:11px; color:var(--muted);">{{ b.chapters }}</span>
               <span style="font-family:var(--font-mono); font-size:11px; font-weight:500; color:var(--accent); margin-left:auto;">Read &nearr;</span>
             </div>
           </a>
         </sc-for>
       </div>
+
+      <sc-for list="{{ featuredBooks }}" as="b" hint-placeholder-count="1">
+      <div data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; margin:0 0 14px; background:var(--bg); border:1px solid var(--rule); border-radius:var(--card-radius); padding:20px 24px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease;" style-hover="transform:translateY(-3px); box-shadow:0 14px 34px rgba(33,28,24,.1);">
+        <span style="width:4px; align-self:stretch; min-height:42px; border-radius:2px; background:linear-gradient(180deg,#2E78C9,#7C3AED,#1D9E75,#C2410C);"></span>
+        <div style="flex:1 1 280px;">
+          <p style="font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:0 0 6px;">{{ b.n }} · {{ b.status }}</p>
+          <p style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:18px; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 4px;">{{ b.title }}</p>
+          <p style="font-size:13px; color:var(--mid); line-height:1.55; margin:0;">{{ b.sub }}<br>{{ b.desc }}</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px 20px; font-family:var(--font-mono); font-size:11.5px; font-weight:500;">
+          <a href="{{ b.link }}" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; white-space:nowrap;">Read the book &nearr;</a>
+          <a href="https://a.co/d/03VHltDf" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none; white-space:nowrap;">Amazon &nearr;</a>
+        </div>
+      </div>
+      </sc-for>
 
       <p data-reveal style="font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin:0 0 22px; line-height:1.7;">Free to read online. Print and Kindle editions on Amazon:
         <a href="https://a.co/d/0dCz9Lbx" target="_blank" rel="noopener" style="color:var(--accent); text-decoration:none;">Book 1</a> &middot;
@@ -232,16 +250,25 @@ html{scroll-behavior:smooth;scroll-padding-top:110px} a:focus-visible,summary:fo
   <!-- BOOK COVERS -->
   <section style="max-width:var(--max); margin:0 auto; padding:clamp(48px,7vw,88px) clamp(20px,5vw,44px);">
     <p data-reveal style="font-family:var(--font-mono); font-size:11px; font-weight:500; color:var(--accent); letter-spacing:.16em; text-transform:uppercase; text-align:center; margin:0 0 clamp(28px,4vw,44px);">On the shelf</p>
-    <div data-reveal data-bookrow style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,60px); justify-content:center; align-items:flex-start;">
-      <sc-for list="{{ books }}" as="b" hint-placeholder-count="4">
-        <div style="display:flex; flex-direction:column; align-items:center; gap:16px; max-width:300px;">
-          <a href="{{ b.href }}" target="_blank" rel="noopener" style="display:block; transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-5px) rotate(-0.4deg); box-shadow:0 22px 48px rgba(33,28,24,.26);">
-            <div style="position:relative; width:clamp(180px,22vw,228px); aspect-ratio:5/8; border-radius:4px; overflow:hidden; box-shadow:0 12px 34px rgba(33,28,24,.2); background:linear-gradient(150deg, var(--band) 0%, color-mix(in srgb, var(--band) 78%, var(--accent)) 100%);">
+    <div data-reveal data-bookrow>
+      <sc-for list="{{ books }}" as="b" hint-placeholder-count="8">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:16px; width:100%; max-width:228px;">
+          <sc-if value="{{ b.href }}">
+          <a href="{{ b.href }}" target="_blank" rel="noopener" style="display:block; width:100%; transition:transform .2s ease, box-shadow .2s ease;" style-hover="transform:translateY(-5px) rotate(-0.4deg); box-shadow:0 22px 48px rgba(33,28,24,.26);">
+            <div class="shelf-cover" style="position:relative; aspect-ratio:5/8; border-radius:4px; overflow:hidden; box-shadow:0 12px 34px rgba(33,28,24,.2); background:linear-gradient(150deg, var(--band) 0%, color-mix(in srgb, var(--band) 78%, var(--accent)) 100%);">
               <sc-if value="{{ b.img }}" hint-placeholder-val="{{ false }}">
                 <img data-cover="{{ b.img }}" alt="{{ b.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
               </sc-if>
             </div>
           </a>
+          </sc-if>
+          <sc-if value="{{ !b.href }}">
+            <div class="shelf-cover" style="position:relative; aspect-ratio:5/8; border-radius:4px; overflow:hidden; box-shadow:0 12px 34px rgba(33,28,24,.2); background:linear-gradient(150deg, var(--band) 0%, color-mix(in srgb, var(--band) 78%, var(--accent)) 100%);">
+              <sc-if value="{{ b.img }}" hint-placeholder-val="{{ false }}">
+                <img data-cover="{{ b.img }}" alt="{{ b.alt }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;">
+              </sc-if>
+            </div>
+          </sc-if>
           <p style="font-family:var(--font-mono); font-size:12px; color:var(--muted); text-align:center; line-height:1.6; margin:0;">{{ b.caption }}</p>
         </div>
       </sc-for>
@@ -288,7 +315,7 @@ html{scroll-behavior:smooth;scroll-padding-top:110px} a:focus-visible,summary:fo
       <p style="font-size:13px; color:var(--muted); font-style:italic; text-align:center; margin:22px 0 0;">Phases 4 and 5 form a continuous feedback loop. Observe is the measurement layer; Operate is the response layer.</p>
 
       <div data-reveal style="margin-top:clamp(28px,4vw,40px); padding:22px 26px; background:var(--accent-soft); border-left:4px solid var(--accent); border-radius:14px; font-size:14.5px; color:var(--ink); line-height:1.65;">
-        <strong style="font-weight:600;">Used as the structural basis for</strong> the four-book <em>Agentic AI Series</em>, the article series at <em>data-decisions-and-clinics.com</em>, and the SAP Community AI Product Management posts. Adaptable as a multi-session PM upskilling program for organizations building agentic systems in regulated environments.
+        <strong style="font-weight:600;">Used as the structural basis for</strong> the five-book <em>Agentic AI Series</em>, the article series at <em>data-decisions-and-clinics.com</em>, and the SAP Community AI Product Management posts. Adaptable as a multi-session PM upskilling program for organizations building agentic systems in regulated environments.
       </div>
     </div>
   </section>
@@ -318,7 +345,7 @@ html{scroll-behavior:smooth;scroll-padding-top:110px} a:focus-visible,summary:fo
     <div style="max-width:var(--max); margin:0 auto; padding:clamp(56px,8vw,104px) clamp(20px,5vw,44px);">
       <div data-reveal style="margin-bottom:clamp(32px,4vw,48px);">
         <p style="font-family:var(--font-mono); font-size:11px; font-weight:500; color:var(--accent); letter-spacing:.16em; text-transform:uppercase; margin:0 0 14px;">Speaking &amp; impact</p>
-        <h2 style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:clamp(28px,4.2vw,46px); line-height:1.08; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 16px;">Four books and a standalone. One argument.</h2>
+        <h2 style="font-family:var(--font-display); font-weight:var(--disp-weight); font-size:clamp(28px,4.2vw,46px); line-height:1.08; letter-spacing:var(--disp-tracking); color:var(--ink); margin:0 0 16px;">Five series books and two standalones.</h2>
         <p style="font-size:clamp(16px,1.7vw,18px); color:var(--mid); line-height:1.6; max-width:64ch; margin:0;">My writing and teaching draw on enterprise product work, clinical experience and hands-on experimentation with agentic systems.</p>
       </div>
 
@@ -531,7 +558,8 @@ class Component extends DCLogic {
       { n:'Book 1 · The PM', title:'Agentic AI for Busy Product Managers', sub:'A Practitioner\u2019s Guide to the New PM Job', desc:'The full PM lifecycle for agentic products: deciding whether to build, designing behavior and evals, measuring drift, and managing the human system around the agent.', chapters:'15 chapters', status:'Second edition \u00b7 Aug 1', color:'#2E78C9', link:'https://agenticaiproductmanagement.com/book3/' },
       { n:'Book 2 · The Failures', title:'Why Agentic AI Products Fail', sub:'Building the Supervisory Layer That Governs It', desc:'Every agentic product is two products. Most teams build the first and assume the second takes care of itself. It does not.', chapters:'22 chapters', status:'Published', color:'#7C3AED', link:'https://agenticaiproductmanagement.com/book4/' },
       { n:'Book 3 · The Team', title:'The Agentic AI Team', sub:'How Agentic AI Reshapes the Roles That Build It', desc:'The unit of failure is the seam between roles, not the capability of any one of them. A zoom-out from the PM seat to the whole team.', chapters:'26 chapters', status:'Published', color:'#1D9E75', link:'https://agenticaiproductmanagement.com/book5/' },
-      { n:'Book 4 · The Practitioner', title:'The Agentic AI Practitioner', sub:'Keeping the Judgment the Machine Cannot Hold', desc:'The dependency no dashboard tracks: your ability to catch the machine being quietly wrong. A maintenance manual for judgment.', chapters:'15 chapters', status:'Published · Sept 1', color:'#C2410C', link:'https://agenticaiproductmanagement.com/book6/' }
+      { n:'Book 4 · The Practitioner', title:'The Agentic AI Practitioner', sub:'Keeping the Judgment the Machine Cannot Hold', desc:'The dependency no dashboard tracks: your ability to catch the machine being quietly wrong. A maintenance manual for judgment.', chapters:'15 chapters', status:'Published · Sept 1', color:'#C2410C', link:'https://agenticaiproductmanagement.com/book6/' },
+      { n:'Book 5 · Product Leaders', title:'Agentic AI for Product Leaders', sub:'Building the Products That Decide', desc:'One company followed from the proposal for an agent to the year after launch: ten chapters of argument, five phases of case, thirty procedure cards and eleven case-file exhibits.', chapters:'10 chapters · 5 case phases', status:'Published', color:'#2E78C9', link:'https://agenticaiproductmanagement.com/book7/index.html' }
     ];
 
     const A = (typeof window !== 'undefined' && window.__BOOKIMG) || {};
@@ -540,7 +568,10 @@ class Component extends DCLogic {
       { href:'https://agenticaiproductmanagement.com/book4/', img:A.fail||'WAAPF_Cover.jpg', alt:'Why Agentic AI Products Fail', caption:'Why Agentic AI Products Fail' },
       { href:'https://agenticaiproductmanagement.com/book5/', img:A.team||'TAAT_Kindle_Cover.jpg', alt:'The Agentic AI Team', caption:'The Agentic AI Team' },
       { href:'https://agenticaiproductmanagement.com/book6/', img:A.practitioner||'TAAP_Kindle_Cover.jpg', alt:'The Agentic AI Practitioner', caption:'The Agentic AI Practitioner' },
-      { href:'https://a.co/d/04wosVBM', img:A.second||'Kindle_Cover.jpg', alt:'The Second One in the Room', caption:'The Second One in the Room' }
+      { href:'https://agenticaiproductmanagement.com/book7/index.html', img:A.leaders||'AAPL_Kindle.jpeg', alt:'Agentic AI for Product Leaders', caption:'Agentic AI for Product Leaders' },
+      { href:'https://a.co/d/04wosVBM', img:A.second||'Kindle_Cover.jpg', alt:'The Second One in the Room', caption:'The Second One in the Room' },
+      { href:'https://www.amazon.com/dp/B0HK5Z1D78', img:A.firstBook||'YFBWAI_Kindle.jpeg', alt:'Your First Book, With AI', caption:'Your First Book, With AI' },
+      { href:'', img:'Compounding_Author_Kindle.jpg', alt:'The Compounding Author', caption:'The Compounding Author · Coming October 15' }
     ];
 
     const phases = [
@@ -583,7 +614,7 @@ class Component extends DCLogic {
     ];
 
     const banners = [
-      { label:'The Agentic AI Series · for product & engineering teams', headline:'Build the agent. Then build the system that supervises it.', text:'A four-book arc: the PM lifecycle, why agentic products fail, how agentic AI reshapes the team that builds it, and the deliberate practice that keeps human judgment intact. Written for teams shipping AI where being wrong has consequences.' },
+      { label:'The Agentic AI Series · for product & engineering teams', headline:'Build the agent. Then build the system that supervises it.', text:'A five-book arc: the PM lifecycle, why agentic products fail, how agentic AI reshapes the team that builds it, the deliberate practice that keeps human judgment intact, and the product leadership that brings it all together. Written for teams shipping AI where being wrong has consequences.' },
       { label:'Standalone · for anyone who is a patient', headline:'The Second One in the Room', text:"Medicine's professional wall was doing two jobs: controlling who got in, and quietly governing the care that happened inside. AI has dissolved the wall, and almost no one has noticed the second job went with it." },
       { label:'Stages', headline:'SAP SAPPHIRE · SAP TechEd · Microsoft TechEd · OpenSAP', text:'Speaker and trainer at major industry events on enterprise data, AI architecture, and product strategy. 40,000+ enterprise practitioners reached through a co-created OpenSAP course. A 10-person global PM organization built at Walmart from the ground up.' }
     ];
@@ -591,7 +622,7 @@ class Component extends DCLogic {
     const phase0 = phases[0];
     const phasesRest = phases.slice(1);
 
-    return { root: this.root, themeList, credentials, certs, tags, seriesBooks, books, phases, phase0, phasesRest, frameworks, banners };
+    return { root: this.root, themeList, credentials, certs, tags, seriesBooks: seriesBooks.slice(0, 4), featuredBooks: seriesBooks.slice(4), books, phases, phase0, phasesRest, frameworks, banners };
   }
 }
 </script>
