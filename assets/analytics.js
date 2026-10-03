@@ -51,8 +51,13 @@
 
   var amazonBooks = {
     '/d/0dCz9Lbx': books.book3,
+    '/dp/B0HBNHDGFR': books.book3,
     '/d/0cdvAyjn': books.book4,
-    '/d/0jhGrB91': books.book5
+    '/d/0jhGrB91': books.book5,
+    '/dp/B0HH7YGQ54': books.book6,
+    '/dp/B0HLPF92PQ': books.book7,
+    '/d/04wosVBM': 'The Second One in the Room',
+    '/dp/B0HK5Z1D78': 'Your First Book, With AI'
   };
   var clickBook = '';
   function report(href, element) {
